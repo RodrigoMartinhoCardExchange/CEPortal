@@ -1,0 +1,71 @@
+:host {
+    @apply flex w-full max-w-[15.063rem] h-full overflow-y-auto overflow-x-clip min-w-[15.063rem];
+}
+
+nav {
+    @apply flex flex-col w-full h-full px-2 pb-6 pt-14;
+}
+
+button {
+    @apply border-none w-full justify-start px-[10px] whitespace-nowrap text-[0.875rem];
+}
+
+.nav-buttons-container {
+    @apply flex flex-col w-full gap-2;
+}
+
+ce-expansion-panel {
+    @apply bg-transparent text-[0.875rem] pl-[4px];
+}
+
+.expansion-panel-header {
+    @apply flex items-center gap-2 w-full;
+}
+
+.buttons-container-bottom {
+    @apply flex flex-col gap-2 justify-end h-fit;
+}
+
+.separator {
+    @apply border-[1px] border-light-separator_color;
+}
+
+.side-nav-content {
+    @apply overflow-y-auto h-full;
+}
+
+// On smaller screens, the sidenav is closed by default
+@media (max-width: 1599px) {
+    :host {
+        @apply w-14 min-w-14;
+    }
+    #text {
+        @apply hidden p-0;
+    }
+    button {
+        @apply w-[2.5rem] justify-center;
+    }
+    ce-expansion-panel {
+        @apply w-[2.5rem];
+    }
+    .expansion-panel-header {
+        @apply justify-center;
+    }
+}
+
+@media (max-height: 33rem) {
+    .side-nav-content {
+        @apply min-h-[41.875rem] overflow-clip;
+    }
+    nav {
+        @apply pt-2;
+    }
+}
+
+.icon {
+    @apply text-[1.25rem];
+}
+
+.expansion-panel-buttons {
+    @apply flex pl-3 gap-1 flex-col;
+}

@@ -1,0 +1,26 @@
+:host {
+    @apply pl-[7vw] pr-[30vw] flex flex-col w-full gap-3;
+}
+
+.page-utilities {
+    @apply flex gap-6 justify-end w-fit items-center;
+}
+
+button[ceButton] {
+    @apply text-nowrap font-[600] text-[1rem];
+}
+
+@media (max-width: 43.5rem) {
+    .page-header {
+        @apply flex-wrap gap-4;
+    }
+}
+
+.center-column {
+    @apply justify-center flex;
+}
+
+.icon {
+    @apply text-[1.188rem];
+}
+  

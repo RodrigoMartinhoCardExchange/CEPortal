@@ -1,0 +1,28 @@
+body {
+  font-family: "Inter";
+}
+
+html,
+body {
+  @apply h-full;
+}
+
+html {
+  @apply overflow-clip;
+}
+
+.page-header {
+  @apply flex flex-row justify-between pl-3 items-center;
+}
+
+.page-title {
+  @apply font-[700] text-[2.25rem];
+}
+
+input[type="checkbox"] {
+  @apply w-[1.125rem] h-[1.125rem] cursor-pointer;
+}
+
+.icon-button {
+  @apply border-none rounded;
+}

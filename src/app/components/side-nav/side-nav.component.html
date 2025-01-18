@@ -1,0 +1,161 @@
+<nav>
+  <div class="side-nav-content" id="side-nav-content">
+    <div class="nav-buttons-container">
+      <!-- Dashboard -->
+      <button
+        ceButton="neutralSecondary"
+        routerLink="/dashboard"
+        routerLinkActive="active"
+      >
+        <span class="material-symbols-rounded icon"> home </span>
+        <div id="text">
+          {{ "SIDENAV.DASHBOARD" | translate }}
+        </div>
+      </button>
+
+      <!-- Setup -->
+      <button
+        ceButton="neutralSecondary"
+        routerLink="/setup"
+        routerLinkActive="active"
+      >
+        <span class="material-symbols-rounded"> build </span>
+        <div id="text">
+          {{ "SIDENAV.SETUP" | translate }}
+        </div>
+      </button>
+
+      <!-- General -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> more_horiz </span>
+          <div id="text">
+            {{ "SIDENAV.GENERAL" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Users -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> person </span>
+          <div id="text">
+            {{ "SIDENAV.USERS" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Groups -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> group </span>
+          <div id="text">
+            {{ "SIDENAV.GROUPS" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Roles -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> license </span>
+          <div id="text">
+            {{ "SIDENAV.ROLES" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Data archive -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> database </span>
+          <div id="text">
+            {{ "SIDENAV.DATA_ARCHIVE" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Add ins -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> campaign </span>
+          <div id="text">
+            {{ "SIDENAV.ADD_INS" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Setup -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> build </span>
+          <div id="text">
+            {{ "SIDENAV.SETUP" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Processes -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> description </span>
+          <div id="text">
+            {{ "SIDENAV.PROCESSES" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Messages -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> description </span>
+          <div id="text">
+            {{ "SIDENAV.MESSAGES" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+
+      <!-- Notifications -->
+      <ce-expansion-panel [showArrow]="showArrow">
+        <div header class="expansion-panel-header">
+          <span class="material-symbols-rounded icon"> headphones </span>
+          <div id="text">
+            {{ "SIDENAV.NOTIFICATIONS" | translate }}
+          </div>
+        </div>
+      </ce-expansion-panel>
+    </div>
+  </div>
+
+  <div class="buttons-container-bottom">
+    <div class="separator"></div>
+
+    <!-- Help button -->
+    <button
+      ceButton="neutralSecondary"
+    >
+      <span class="material-symbols-rounded icon"> help </span>
+      <div id="text">
+        {{ "SIDENAV.HELP" | translate }}
+      </div>
+    </button>
+
+    <!-- Settings button -->
+    <button
+      ceButton="neutralSecondary"
+    >
+      <span class="material-symbols-rounded icon"> settings </span>
+      <div id="text">
+        {{ "SIDENAV.SETTINGS" | translate }}
+      </div>
+    </button>
+
+    <!-- Logout button -->
+    <button ceButton="dangerSecondary" (click)="logout()">
+      <span class="material-symbols-rounded icon"> logout </span>
+      <div id="text">
+        {{ "SIDENAV.LOGOUT" | translate }}
+      </div>
+    </button>
+  </div>
+</nav>

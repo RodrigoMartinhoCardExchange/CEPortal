@@ -1,0 +1,99 @@
+:host {
+    @apply w-full flex flex-col pl-16;
+}
+
+ce-stepper {
+    @apply gap-12;
+}
+
+.go-back-button {
+    @apply border-transparent;
+}
+
+.content-container {
+    @apply w-full h-full flex items-start flex-col mt-12 pl-36;
+}
+
+button {
+    @apply font-[600] text-[1rem];
+}
+
+.title {
+    @apply font-[700] text-[2.25rem];
+}
+
+.stepper-content {
+    @apply flex flex-col;
+}
+
+.text {
+    @apply font-[400] text-[0.875rem] text-light-text_default ml-3;
+}
+
+.text.intro {
+    @apply ml-0;
+}
+
+.stepper-navigation {
+    @apply grid grid-cols-[auto_1fr_auto];
+}
+
+.button-next {
+    @apply justify-self-end col-start-3;
+}
+
+.button-back {
+    @apply justify-self-start col-start-1;
+}
+
+.content {
+    @apply flex flex-col justify-between w-full h-full max-w-[45vw] max-h-[70vh];
+}
+
+input[type='radio'] {
+    @apply h-5 w-5 cursor-pointer;
+}
+
+ce-form-field {
+    @apply max-w-[37.5rem];
+}
+
+.radio-label {
+    @apply font-[700] text-[1.25rem];
+}
+
+.radio-form {
+    @apply flex flex-col gap-2;
+}
+
+.radio-container {
+    @apply flex gap-3 items-center;
+}
+
+.subscription-type {
+    @apply mt-10 flex gap-6 flex-col max-w-[70%];
+}
+
+.step-3-form {
+    @apply flex flex-row gap-6 mt-10 max-w-[90%];
+}
+
+.step-6-form {
+    @apply gap-8;
+}
+
+.setup-period {
+    @apply flex gap-2 items-center;
+}
+
+label {
+    @apply font-[400] text-[1rem] text-light-text_default mr-2;
+}
+
+.step-3-col {
+    @apply flex flex-col w-full gap-4;
+}
+
+.hint {
+    @apply font-[400] text-[0.75rem] text-light-text_weak;
+}

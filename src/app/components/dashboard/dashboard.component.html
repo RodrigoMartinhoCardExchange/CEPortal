@@ -1,0 +1,248 @@
+<div class="page-header">
+    <span class="page-title">
+        {{ 'DASHBOARD.TITLE' | translate: { company: 'CardExchange' } }}
+        <span class="row-value">
+            v {{ version }}
+        </span>
+    </span>
+
+    <ce-input type="search" placeholder="{{ 'DASHBOARD.SEARCH' | translate }}"></ce-input>
+</div>
+
+
+<!-- Cards -->
+<div class="cards-container">
+    <ce-card>
+        <span class="title">
+            {{ 'DASHBOARD.OVERVIEW' | translate }}
+        </span>
+    
+        <div class="card-cotent">
+            <!-- Branches -->
+            <div class="card-row">
+                <div class="row-half">
+                    <span class="material-symbols-rounded dashboard-icon">
+                        group
+                    </span>
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.BRANCHES' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Branches value"    
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton>{{ 'DASHBOARD.ADD' | translate}}</button>
+                </div>
+            </div>
+    
+            <!-- Resellers -->
+            <div class="card-row">
+                <div class="row-half">
+                    <span class="material-symbols-rounded dashboard-icon">
+                        check_circle
+                    </span>
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.RESELLERS' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Resellers value"    
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton="deafultSecondary" class="button-details">{{ 'DASHBOARD.VIEW_DETAILS' | translate}}</button>
+                    <button ceButton>{{ 'DASHBOARD.ADD' | translate}}</button>
+                </div>
+            </div>
+    
+            <!-- Linked printers -->
+            <div class="card-row">
+                <div class="row-half">
+                    <span class="material-symbols-rounded dashboard-icon">
+                        person
+                    </span>
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.LINK_PRINTERS' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Link printers value"
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton="deafultSecondary" class="button-details">{{ 'DASHBOARD.VIEW_DETAILS' | translate}}</button>
+                    <button ceButton>{{ 'DASHBOARD.ADD' | translate}}</button>
+                </div>
+            </div>
+    
+            <!-- Printer groups -->
+            <div class="card-row">
+                <div class="row-half">
+                    <span class="material-symbols-rounded dashboard-icon">
+                        person
+                    </span>
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.PRINTER_GROUPS' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Printer groups value"
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton="deafultSecondary" class="button-details">{{ 'DASHBOARD.VIEW_DETAILS' | translate}}</button>
+                    <button ceButton>{{ 'DASHBOARD.ADD' | translate}}</button>
+                </div>
+            </div>
+    
+            <!-- Records to archive -->
+            <div class="card-row">
+                <div class="row-half">
+                    <span class="material-symbols-rounded dashboard-icon">
+                        person
+                    </span>
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.RECORDS_ARCHIVE' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Records to archive value"
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton="deafultSecondary" class="button-details">{{ 'DASHBOARD.VIEW_DETAILS' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </ce-card>
+    
+    <ce-card>
+        <span class="title">
+            {{ 'DASHBOARD.PLAN_DETAILS' | translate }}
+        </span>
+    
+        <div class="card-cotent">
+            <!-- Data plan -->
+            <div class="card-row">
+                <div class="row-half">
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.DATA_PLAN' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Data plan value"    
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton="deafultSecondary">{{ 'DASHBOARD.UPGRADE_PLAN' | translate}}</button>
+                </div>
+            </div>
+    
+            <!-- Subscribed services -->
+            <div class="card-row">
+                <div class="row-half">
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.SUBSCRIBED_SERVICES' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Subscribed services value"    
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton="deafultSecondary" class="button-details">{{ 'DASHBOARD.VIEW_DETAILS' | translate}}</button>
+                    <button ceButton>{{ 'DASHBOARD.ADD' | translate}}</button>
+                </div>
+            </div>
+    
+            <!-- Subscription date -->
+            <div class="card-row">
+                <div class="row-half">
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.SUBSCRIPTION_VALID_UNTIL' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Subscription expiration date"
+                        </span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Total records -->
+            <div class="card-row">
+                <div class="row-half">
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.TOTAL_RECORD_PLAN' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Total record plan value"
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button ceButton="deafultSecondary" class="button-details">{{ 'DASHBOARD.VIEW_DETAILS' | translate}}</button>
+                    <button ceButton>{{ 'DASHBOARD.ADD' | translate}}</button>
+                </div>
+            </div>
+    
+            <!-- Active records -->
+            <div class="card-row">
+                <div class="row-half">
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.ACTIVE_RECORDS' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Active records value"
+                        </span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Available records -->
+            <div class="card-row">
+                <div class="row-half">
+                    <div class="content-column">
+                        <span class="row-title">
+                            {{ 'DASHBOARD.AVAILABLE_RECORDS' | translate }}
+                        </span>
+                        
+                        <span class="row-value">
+                            "Available records value"
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </ce-card>
+</div>

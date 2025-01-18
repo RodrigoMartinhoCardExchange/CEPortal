@@ -1,0 +1,529 @@
+<button ceButton="deafultSecondary" class="go-back-button" (click)="goBack()">
+  <span class="material-symbols-rounded"> arrow_back </span>
+  {{ "SUBSCRIPTIONS.WIZARD.GO_BACK" | translate }}
+</button>
+
+<div class="content-container">
+  <div class="content">
+    <ce-stepper (currentIndex)="setStepIndex($event)">
+      <!-- Step 1 -->
+      <ce-step [error]="parentGroup.get('name')!.invalid">
+        <ng-container *ngTemplateOutlet="step1"></ng-container>
+      </ce-step>
+
+      <!-- Step 2 -->
+      <ce-step [error]="parentGroup.get('version')!.invalid">
+        <ng-container *ngTemplateOutlet="step2"></ng-container>
+      </ce-step>
+
+      <!-- Step 3 -->
+      <ce-step [error]="getNestedGroup('step3').invalid">
+        <ng-container *ngTemplateOutlet="step3"></ng-container>
+      </ce-step>
+
+      <!-- Step 4 -->
+      <ce-step [error]="getNestedGroup('step4').invalid">
+        <ng-container *ngTemplateOutlet="step4"></ng-container>
+      </ce-step>
+
+      <!-- Step 5 -->
+      <ce-step [error]="getNestedGroup('step5').invalid">
+        <ng-container *ngTemplateOutlet="step5"></ng-container>
+      </ce-step>
+
+      <!-- Step 6 -->
+      <ce-step>
+        <ng-container *ngTemplateOutlet="step6"></ng-container>
+      </ce-step>
+
+      <!-- Step 7 -->
+      <ce-step>
+        <ng-container *ngTemplateOutlet="step7"></ng-container>
+      </ce-step>
+
+      <!-- Step 8 -->
+      <ce-step>
+        <ng-container *ngTemplateOutlet="step8"></ng-container>
+      </ce-step>
+
+      <ce-step>
+        <ng-container *ngTemplateOutlet="step9"></ng-container>
+      </ce-step>
+    </ce-stepper>
+
+    <!-- First Step -->
+    <ng-template #step1>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.CREATE_SUBSCRIPTION" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.WIZARD_INTRO" | translate
+        }}</span>
+        <form [formGroup]="parentGroup" class="subscription-type">
+          <div class="radio-form">
+            <div class="radio-container">
+              <input
+                type="radio"
+                formControlName="name"
+                name="name"
+                value="controller"
+              />
+              <span class="radio-label"
+                >CardExchange® CONTROLLER Subscription</span
+              >
+            </div>
+
+            <span class="text">
+              {{ "SUBSCRIPTIONS.WIZARD.CONTROLLER_DESCRIPTION" | translate }}
+            </span>
+          </div>
+
+          <div class="radio-form">
+            <div class="radio-container">
+              <input
+                type="radio"
+                formControlName="name"
+                name="name"
+                value="producer"
+              />
+              <span class="radio-label"
+                >CardExchange® PRODUCER Subscription</span
+              >
+            </div>
+
+            <span class="text">
+              {{ "SUBSCRIPTIONS.WIZARD.PRODUCER_DESCRIPTION" | translate }}
+            </span>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Second Step -->
+    <ng-template #step2>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_2.TITLE" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_2.INTRO"
+            | translate
+              : { subscription: this.parentGroup.value.step1 | titlecase }
+        }}</span>
+
+        <form [formGroup]="parentGroup" class="subscription-type">
+          <div class="radio-form">
+            <div class="radio-container">
+              <input
+                type="radio"
+                formControlName="version"
+                name="version"
+                value="desktop"
+              />
+              <span class="radio-label">
+                {{ "SUBSCRIPTIONS.WIZARD.STEP_2.DESKTOP_VERSION" | translate }}
+              </span>
+            </div>
+
+            <span class="text">
+              {{
+                "SUBSCRIPTIONS.WIZARD.STEP_2.DESKTOP_VERSION_DESCRIPTION"
+                  | translate
+              }}
+            </span>
+          </div>
+
+          <div class="radio-form">
+            <div class="radio-container">
+              <input
+                type="radio"
+                formControlName="version"
+                name="version"
+                value="cloud"
+              />
+              <span class="radio-label">{{
+                "SUBSCRIPTIONS.WIZARD.STEP_2.CLOUD_VERSION" | translate
+              }}</span>
+            </div>
+
+            <span class="text">
+              {{
+                "SUBSCRIPTIONS.WIZARD.STEP_2.CLOUD_VERSION_DESCRIPTION"
+                  | translate
+              }}
+            </span>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Third Step -->
+    <ng-template #step3>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.CREATE_SUBSCRIPTION" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_3.INTRO" | translate
+        }}</span>
+
+        <form [formGroup]="getNestedGroup('step3')" class="step-3-form">
+          <div class="step-3-col">
+            <ce-form-field
+              [label]="'SUBSCRIPTIONS.WIZARD.STEP_3.SELECT_PLAN' | translate"
+            >
+              <ce-input
+                type="select"
+                [placeholder]="'SELECT' | translate"
+                formControlName="plan"
+              ></ce-input>
+            </ce-form-field>
+
+            <ce-form-field
+              [label]="
+                'SUBSCRIPTIONS.WIZARD.STEP_3.SETUP_PERIOD_QUESTION' | translate
+              "
+              [hint]="
+                'SUBSCRIPTIONS.WIZARD.STEP_3.SETUP_PERIOD_HINT' | translate
+              "
+            >
+              <div class="setup-period">
+                <input
+                  type="radio"
+                  [value]="true"
+                  id="setupPeriodYes"
+                  formControlName="hasSetupPeriod"
+                  name="hasSetupPeriod"
+                  (click)="enableSetupPeriod()"
+                />
+                <label for="setupPeriodYes">{{ "YES" | translate }}</label>
+                <input
+                  type="radio"
+                  [value]="false"
+                  id="setupPeriodNo"
+                  formControlName="hasSetupPeriod"
+                  name="hasSetupPeriod"
+                  (click)="disableSetupPeriod()"
+                />
+                <label for="setupPeriodNo">{{ "NO" | translate }}</label>
+              </div>
+
+              <ce-input formControlName="setupPeriod" name="setupPeriod">
+              </ce-input>
+            </ce-form-field>
+          </div>
+
+          <ce-form-field
+            [label]="
+              'SUBSCRIPTIONS.WIZARD.STEP_3.SELECT_HOSTING_LOCATION' | translate
+            "
+          >
+            <ce-input
+              type="select"
+              [placeholder]="'SELECT' | translate"
+              formControlName="hostingLocation"
+            >
+              <ce-option
+                *ngFor="let hostingLocation of hostingLocations"
+                [value]="hostingLocation"
+                >{{ hostingLocation }}</ce-option
+              >
+            </ce-input>
+          </ce-form-field>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Fourth Step -->
+    <ng-template #step4>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.CREATE_SUBSCRIPTION" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_3.INTRO" | translate
+        }}</span>
+
+        <form [formGroup]="getNestedGroup('step4')" class="subscription-type">
+          <ce-form-field
+            [label]="
+              'SUBSCRIPTIONS.WIZARD.STEP_4.CHOOSE_START_DATE' | translate
+            "
+            errorMessage="Start Date is required"
+          >
+            <ce-input
+              formControlName="startDate"
+              type="date"
+              placeholder="MM / DD / YYYY"
+            ></ce-input>
+          </ce-form-field>
+
+          <ce-form-field
+            [label]="
+              'SUBSCRIPTIONS.WIZARD.STEP_4.SELECT_CONTRACT_LENGTH' | translate
+            "
+            errorMessage="Contract length is required"
+          >
+            <ce-input
+              formControlName="contractLength"
+              type="select"
+              [placeholder]="'SELECT' | translate"
+            ></ce-input>
+          </ce-form-field>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Fifth Step -->
+    <ng-template #step5>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_5.TITLE" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_5.INTRO" | translate
+        }}</span>
+
+        <form [formGroup]="getNestedGroup('step5')" class="subscription-type">
+          <ce-form-field
+            [label]="
+              'SUBSCRIPTIONS.WIZARD.STEP_5.PAYMENT_TERM_LABEL' | translate
+            "
+          >
+            <div class="setup-period">
+              <input
+                type="radio"
+                name="paymentTerm"
+                formControlName="paymentTerm"
+                value="annual"
+                id="annual"
+              />
+              <label for="annual">{{
+                "SUBSCRIPTIONS.WIZARD.STEP_5.ANNUAL" | translate
+              }}</label>
+              <input
+                type="radio"
+                name="paymentTerm"
+                formControlName="paymentTerm"
+                value="term"
+                id="term"
+              />
+              <label for="term">{{
+                "SUBSCRIPTIONS.WIZARD.STEP_5.TERM" | translate
+              }}</label>
+            </div>
+          </ce-form-field>
+
+          <ce-form-field
+            [label]="'SUBSCRIPTIONS.WIZARD.STEP_5.DISCOUNT' | translate"
+          >
+            <ce-input
+              formControlName="discount"
+              type="select"
+              [placeholder]="'SELECT' | translate"
+            ></ce-input>
+          </ce-form-field>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Sixth Step -->
+    <ng-template #step6>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_6.TITLE" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_6.INTRO" | translate
+        }}</span>
+
+        <form
+          [formGroup]="getNestedGroup('step6')"
+          class="subscription-type step-6-form"
+        >
+          <ce-form-field
+            [label]="
+              'SUBSCRIPTIONS.WIZARD.STEP_6.RENEWAL_TERM_LABEL' | translate
+            "
+          >
+            <div class="setup-period">
+              <input
+                type="radio"
+                name="renewalTerm"
+                formControlName="renewalTerm"
+                value="selectedTerm"
+                id="selectedTerm"
+              />
+              <label for="annual">{{
+                "SUBSCRIPTIONS.WIZARD.STEP_6.SELECTED_TERM" | translate
+              }}</label>
+              <input
+                type="radio"
+                name="renewalTerm"
+                formControlName="renewalTerm"
+                value="autoRenewal"
+                id="autoRenewal"
+              />
+              <label for="term">{{
+                "SUBSCRIPTIONS.WIZARD.STEP_6.AUTO_RENEWAL" | translate
+              }}</label>
+            </div>
+          </ce-form-field>
+
+          <ce-form-field
+            [label]="'SUBSCRIPTIONS.WIZARD.STEP_6.PO_NUMBER' | translate"
+          >
+            <ce-input
+              [placeholder]="'ENTER' | translate"
+              formControlName="poNumber"
+            ></ce-input>
+          </ce-form-field>
+
+          <ce-form-field
+            [label]="'SUBSCRIPTIONS.WIZARD.STEP_6.RECORD_PLAN' | translate"
+          >
+            <ce-input
+              type="select"
+              [placeholder]="'SELECT' | translate"
+              formControlName="recordPlan"
+            ></ce-input>
+          </ce-form-field>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Seventh Step -->
+    <ng-template #step7>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_7.TITLE" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_7.INTRO" | translate
+        }}</span>
+
+        <form [formGroup]="getNestedGroup('step7')" class="subscription-type">
+          <ce-form-field
+            [label]="'SUBSCRIPTIONS.WIZARD.STEP_7.SELECT_EDITION' | translate"
+          >
+            <ce-input
+              type="select"
+              formControlName="edition"
+              [placeholder]="'SELECT' | translate"
+            >
+            <ce-option
+              *ngFor="let edition of editions"
+              [value]="edition"
+              >{{ edition }}</ce-option
+            >
+            </ce-input>
+          </ce-form-field>
+
+          <ce-form-field
+            [label]="
+              'SUBSCRIPTIONS.WIZARD.STEP_7.SUBSCRIPTIONS_NUMBER' | translate
+            "
+          >
+            <ce-input
+              formControlName="subscriptionsNumber"
+              [placeholder]="'ENTER' | translate"
+            >
+            </ce-input>
+          </ce-form-field>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Eight Step -->
+    <ng-template #step8>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_8.TITLE" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_8.INTRO" | translate
+        }}</span>
+
+        <form [formGroup]="getNestedGroup('step8')" class="subscription-type">
+          <ce-form-field [label]="'SUBSCRIPTIONS.WIZARD.STEP_8.ADITIONAL_SESSIONS' | translate">
+            <div class="setup-period">
+              <input
+                type="radio"
+                [value]="true"
+                id="aditionalSessionsYes"
+                formControlName="aditionalSessions"
+                name="aditionalSessions"
+              />
+              <label for="aditionalSessionsYes">{{ "YES" | translate }}</label>
+              <input
+                type="radio"
+                [value]="false"
+                id="aditionalSessionsNo"
+                formControlName="aditionalSessions"
+                name="aditionalSessions"
+              />
+              <label for="aditionalSessionsNo">{{ "NO" | translate }}</label>
+            </div>
+          </ce-form-field>
+
+          <ce-form-field [label]="'SUBSCRIPTIONS.WIZARD.STEP_8.ADITIONAL_SESSIONS_NUMBER' | translate">
+            <ce-input [placeholder]="'ENTER' | translate"></ce-input>
+          </ce-form-field>
+        </form>
+      </div>
+    </ng-template>
+
+    <!-- Ninth Step -->
+    <ng-template #step9>
+      <div class="stepper-content">
+        <span class="title">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_9.TITLE" | translate
+        }}</span>
+        <span class="text intro">{{
+          "SUBSCRIPTIONS.WIZARD.STEP_9.INTRO" | translate
+        }}</span>
+
+        <form [formGroup]="parentGroup" class="subscription-type">
+          <ce-form-field [label]="'SUBSCRIPTIONS.WIZARD.STEP_9.ADD_CARDEXCHANGE_LINK' | translate">
+            <div class="setup-period">
+              <input
+                type="radio"
+                [value]="true"
+                id="cardExchangeLinkYes"
+                formControlName="cardExchangeLink"
+                name="cardExchangeLink"
+              />
+              <label for="cardExchangeLinkYes">{{ "YES" | translate }}</label>
+              <input
+                type="radio"
+                [value]="false"
+                id="cardExchangeLinkNo"
+                formControlName="cardExchangeLink"
+                name="cardExchangeLink"
+              />
+              <label for="cardExchangeLinkNo">{{ "NO" | translate }}</label>
+            </div>
+          </ce-form-field>
+        </form>
+      </div>
+    </ng-template>
+
+    <div class="stepper-navigation">
+      <button
+        ceButton="neutralSecondary"
+        (click)="previousStep()"
+        class="button-back"
+        *ngIf="stepIndex !== 0"
+      >
+        <span class="material-symbols-rounded"> arrow_back </span>
+        {{ "SUBSCRIPTIONS.WIZARD.BACK" | translate }}
+      </button>
+
+      <button ceButton (click)="nextStep()" class="button-next">
+        {{ "SUBSCRIPTIONS.WIZARD.NEXT" | translate }}
+        <span class="material-symbols-rounded"> arrow_forward </span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+:host {
+    @apply flex h-16 justify-end items-center w-full;
+}
+
+header {
+    @apply flex w-full h-fit items-center justify-between px-6;
+}
+
+button {
+    @apply rounded-full border-none;
+}
+
+span {
+    @apply text-[1.563rem];
+}
+
+.header-buttons-container {
+    @apply flex gap-[.75rem];
+}
+
+.logo {
+    @apply max-h-[2.75rem] max-w-[13.063rem] h-full w-full;
+}

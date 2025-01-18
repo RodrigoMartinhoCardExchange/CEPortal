@@ -1,0 +1,115 @@
+{
+    "SIDENAV": {
+        "DASHBOARD": "Dashboard",
+        "GENERAL": "General",
+        "USERS": "Users",
+        "GROUPS": "Groups",
+        "ROLES": "Roles",
+        "SUBSCRIPTIONS": "Subscriptions",
+        "DATA_ARCHIVE": "Data Archive",
+        "ADD_INS": "Add Ins",
+        "SETUP": "Setup",
+        "PROCESSES": "Processes",
+        "MESSAGES": "Messages",
+        "NOTIFICATIONS": "Notifications",
+        "HELP": "Help",
+        "SETTINGS": "Settings",
+        "LOGOUT": "Logout Account"
+    },
+    "DASHBOARD": {
+        "TITLE": "{{company}} Portal",
+        "SEARCH": "Search..",
+        "OVERVIEW": "Overview",
+        "BRANCHES": "Branches",
+        "VIEW_DETAILS": "View Details",
+        "ADD": "Add",
+        "RESELLERS": "Resellers",
+        "LINK_PRINTERS": "Link Printers",
+        "PRINTER_GROUPS": "Printer Groups",
+        "RECORDS_ARCHIVE": "Records to Archive",
+        "PLAN_DETAILS": "Plan Details",
+        "DATA_PLAN": "Active Data Plan",
+        "UPGRADE_PLAN": "Upgrade Plan",
+        "SUBSCRIBED_SERVICES": "Subscribed Services",
+        "SUBSCRIPTION_VALID_UNTIL": "Subscription Valid Until",
+        "TOTAL_RECORD_PLAN": "Total Record Plan",
+        "ACTIVE_RECORDS": "Active Records",
+        "AVAILABLE_RECORDS": "Available Records"
+    },
+    "SUBSCRIPTIONS": {
+        "SEARCH": "Search subscriptions..",
+        "CREATE_SUBSCRIPTION": "Create Subscription",
+        "BLOCK": "Block",
+        "WIZARD": {
+            "GO_BACK": "Go Back",
+            "CREATE_SUBSCRIPTION": "Create a Subscription",
+            "WIZARD_INTRO": "Our step-by-step wizard will help guide you through creating your subscription. To start, please choose a subscription type.",
+            "NEXT": "Next",
+            "BACK": "Back",
+            "CONTROLLER_DESCRIPTION": "Focusing solely on credential management and enrollment processes, select this option if your subscription is intended to manage digital or physical credentials without needing physical production features.",
+            "PRODUCER_DESCRIPTION": "Select this option if you are focused on the physical production of credentials, such as printing ID cards or badges, without needing credential management or enrollment features.",
+            "STEP_2": {
+                "TITLE": "Select a Version",
+                "INTRO": "Select which version of {{subscription}} best suits your needs. If you choose the Cloud version, you will need to select the number of records you wish to manage in the cloud. The desktop version does not give access to the Cloud version, but it can be upgraded later if needed.",
+                "DESKTOP_VERSION": "Desktop Version",
+                "DESKTOP_VERSION_DESCRIPTION": "This version allows you to manage and produce credentials exclusively on desktop devices.",
+                "CLOUD_VERSION": "Cloud Version",
+                "CLOUD_VERSION_DESCRIPTION": "This version provides access to cloud-based production, where you can manage and produce credentials online. It can also be combined with the Desktop solution."
+            },
+            "STEP_3": {
+                "INTRO": "You can choose if you would like to offer a setup period before the subscription officially begins. Then specify the start date and contract length.",
+                "SELECT_PLAN": "Select A Plan",
+                "SELECT_HOSTING_LOCATION": "Select Hosting Location",
+                "SETUP_PERIOD_QUESTION": "Do you want to add a setup period? (Optional)",
+                "SETUP_PERIOD_HINT": "Enter the number of days for the setup period, the default is 30 days."
+            },
+            "STEP_4": {
+                "TITLE": "Contract Terms",
+                "INTRO": "Specify the start date and contract length.",
+                "CHOOSE_START_DATE": "Choose A Start Date",
+                "SELECT_CONTRACT_LENGTH": "Select contract length"
+            },
+            "STEP_5": {
+                "TITLE": "Select Payment Terms",
+                "INTRO": "Choose the payment terms based on the selected contract length. The contract duration remains a minimum of one year even if monthly payments are selected. Discounts apply only if the Term option is selected!",
+                "PAYMENT_TERM_LABEL": "Choose the renewal terms for the contract.",
+                "ANNUAL": "Annual",
+                "TERM": "Term",
+                "DISCOUNT": "Discount"
+            },
+            "STEP_6": {
+                "TITLE": "Set Renewal Terms",
+                "INTRO": "Choose the renewal terms based on the selected contract length and enter the Purchase Order (PO) Number if applicable. Then choose a record plan.",
+                "SELECTED_TERM": "Selected Term",
+                "AUTO_RENEWAL": "Auto Renewal",
+                "RENEWAL_TERM_LABEL": "Choose the renewal terms for the contract.",
+                "PO_NUMBER": "Enter PO Number (Optional)",
+                "RECORD_PLAN": "Chose Record Plan"
+            },
+            "STEP_7": {
+                "TITLE": "Select the Edition",
+                "INTRO": "Select the edition that best suits your desktop production requirements, then set the amount of subscriptions to be created. Each edition provides varying levels of functionality, from basic to full-featured solutions.",
+                "SELECT_EDITION": "Select Edition",
+                "SUBSCRIPTIONS_NUMBER": "Number Of Subscriptions"
+            },
+            "STEP_8": {
+                "TITLE": "Additional Sessions",
+                "INTRO": "If you have selected the Connect or Ultimate version of Producer and are creating a single subscription, you can add additional sessions here. After the license is created, users can order more sessions for their individual subscriptions.",
+                "ADITIONAL_SESSIONS": "Do you want to add additional sessions?",
+                "ADITIONAL_SESSIONS_NUMBER": "Number of Additional Sessions"
+            },
+            "STEP_9": {
+                "TITLE": "Add CardExchange® Link?",
+                "INTRO": "CardExchange® LINK allows you to print directly to the cloud without the need to install printer drivers locally. This feature provides flexibility, particularly for organizations that use multiple printers or wish to centralize printer management.",
+                "ADD_CARDEXCHANGE_LINK": "Do you want to add CardExchange® Link?"
+            }
+        }
+    },
+    "SETUP": {
+        "ADD_PARTNER": "Add Partner"
+    },
+    "SELECT": "Select..",
+    "YES": "Yes",
+    "NO": "No",
+    "ENTER": "Enter"
+}

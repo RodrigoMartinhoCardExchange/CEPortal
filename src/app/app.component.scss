@@ -1,0 +1,12 @@
+:host {
+  @apply bg-light-primary dark:bg-dark-primary w-full h-full flex align-bottom flex-col;
+}
+
+main {
+  @apply h-full flex grow;
+}
+
+.content-header-container {
+  @apply flex-grow flex flex-row;
+  max-height: calc(100vh - 4rem);
+}

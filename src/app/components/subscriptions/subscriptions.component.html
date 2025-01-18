@@ -1,0 +1,82 @@
+<div class="page-header">
+  <span class="page-title">
+    {{ "SIDENAV.SUBSCRIPTIONS" | translate }}
+  </span>
+
+  <div class="page-utilities">
+    <button ceIconButton="neutralSecondary" class="icon-button">
+      <span class="material-symbols-rounded">
+        tune
+      </span>
+    </button>
+    <button ceButton="deafultSecondary" (click)="openSubscriptionWizard()">
+      <span class="material-symbols-rounded"> add </span>
+      <span>
+        {{ "SUBSCRIPTIONS.CREATE_SUBSCRIPTION" | translate }}
+      </span>
+    </button>
+  </div>
+</div>
+
+<ce-table
+  [headers]="headers"
+  [dataSource]="dataSource"
+  pagination="client-side"
+>
+
+  <div ceTableColumn="subscriber">
+    <ng-template ceTableHeader> Subscriber </ng-template>
+    <ng-template ceTableCell let-subscription="row"> {{ subscription.subscriber }} </ng-template>
+  </div>
+
+  <div ceTableColumn="status">
+    <ng-template ceTableHeader> 
+      <div style="text-align: left;">
+        Status
+      </div> 
+    </ng-template>
+    <ng-template ceTableCell let-subscription="row"> 
+      <ce-badge
+        [badgeType]="badgeTypes.get(subscription.status) ?? ''"
+        [statusBadge]="true"
+      >
+        {{ subscription?.status }}
+      </ce-badge> 
+    </ng-template>
+  </div>
+
+  <div ceTableColumn="type">
+    <ng-template ceTableHeader> Type </ng-template>
+    <ng-template ceTableCell let-subscription="row"> {{ subscription.type }} </ng-template>
+  </div>
+
+  <div ceTableColumn="startDate">
+    <ng-template ceTableHeader> Start Date </ng-template>
+    <ng-template ceTableCell let-subscription="row"> {{ subscription.startDate | date : "shortDate" }} </ng-template>
+  </div>
+
+  <div ceTableColumn="renewDate">
+    <ng-template ceTableHeader> Renew Date </ng-template>
+    <ng-template ceTableCell let-subscription="row"> {{ subscription.renewDate | date : "shortDate" }} </ng-template>
+  </div>
+
+  <div ceTableColumn="addOns">
+    <ng-template ceTableHeader> Add Ons </ng-template>
+    <ng-template ceTableCell let-subscription="row"> {{ subscription.addOns }} </ng-template>
+  </div>
+
+  <div ceTableColumn="actions">
+    <ng-template ceTableHeader></ng-template>
+    <ng-template ceTableCell let-subscription="row">
+      <div class="actions-container">
+        <button ceIconButton="neutralSecondary" class="icon-button">
+          <span class="material-symbols-rounded icon">
+            open_in_new
+          </span>
+        </button>
+      </div>
+    </ng-template>
+  </div>
+
+  <ce-paginator></ce-paginator>
+</ce-table>

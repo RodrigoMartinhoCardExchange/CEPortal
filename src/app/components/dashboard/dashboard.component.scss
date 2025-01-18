@@ -1,0 +1,94 @@
+:host {
+    @apply flex flex-col w-full h-fit overflow-y-clip max-h-[99%] px-12;
+}
+
+ce-card {
+    @apply flex flex-col grow gap-12 pt-8 pb-10 px-8 max-h-[48.875rem];
+}
+
+.card-cotent {
+    @apply gap-8 flex flex-col;
+}
+
+.card-row {
+    @apply flex flex-row justify-between items-center gap-[0.875rem];
+}
+
+.dashboard-icon {
+    @apply text-[4.875rem];
+}
+
+.row-title {
+    @apply font-[500] text-[1.125rem];
+}
+
+.row-value {
+    @apply font-[500] text-[0.875rem];
+}
+
+.button-details {
+    @apply bg-light-light_blue;
+}  
+
+.content-column {
+    @apply flex flex-col justify-center gap-2;
+}
+
+.row-half {
+    @apply gap-6 flex;
+}
+
+.cards-container {
+    @apply flex flex-row gap-12 flex-wrap overflow-y-auto;
+}
+
+.buttons-container {
+    @apply gap-6 flex flex-wrap;
+}
+
+.title {
+    @apply text-[2rem] font-[500];
+}
+
+@media (max-height: 24rem) {
+    :host {
+        @apply overflow-y-auto;
+    }
+    .cards-container {
+        @apply overflow-y-clip;
+    }
+}
+
+@media (max-height: 22rem) {
+    ce-input {
+        @apply min-w-40;
+    }
+    .page-header {
+        @apply gap-4;
+      }
+    ce-card {
+        @apply px-4 pt-4 max-h-none;
+    }
+}
+
+@media (max-height: 15.9rem) {
+    .page-header {
+        @apply flex-wrap;
+    }
+}
+
+@media (max-height: 13.875rem) {
+    .card-row {
+        @apply flex-wrap;
+    }
+    .content-column {
+        @apply flex-wrap;
+    }
+    .row-half {
+        @apply flex-wrap;
+    }
+}
+
+button {
+    @apply font-[600] text-[1rem];
+}
